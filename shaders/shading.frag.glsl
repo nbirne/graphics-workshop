@@ -34,7 +34,7 @@ vec3 illuminate(vec3 lightPosition) {
     //  - Multiply the result by specular coefficient ks.
     specular *= ks;
 
-    // vec3 specular = vec3(0.0); // Change me!
+    // vec3 specular = vec3(0.0); // Change me! 
 
     return intensity * (diffuse + specular);
 }
