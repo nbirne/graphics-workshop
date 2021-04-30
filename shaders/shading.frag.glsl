@@ -24,12 +24,12 @@ vec3 illuminate(vec3 lightPosition) {
     //  - Compute the reflected incident light vector r, by reflecting
     //    normalize(wi) about normalize(vNormal) using the reflect()
     //    function.
-    vec3 r = reflect(normalize(vNormal), normalize(wi));
+    vec3 r = -reflect(normalize(wi), normalize(vNormal));
 
     //  - Take the dot product of r and wo, then raise this to the
     //    exponent of the shininess coefficient. (Make sure your
     //    result is not negative!)
-    vec3 specular = vec3(max(pow(dot(wo, r), shininess), 0.0));
+    vec3 specular = vec3(pow(max(dot(wo, r), 0.0), shininess));
 
     //  - Multiply the result by specular coefficient ks.
     specular *= ks;
